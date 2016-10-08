@@ -23,7 +23,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Project Ambrosia</a>
+			<a class="navbar-brand" href="#">BiteShare</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
@@ -47,44 +47,100 @@
 	</div>
 </div>
 
+<!-- TODO: We need to add an app description and a get started button -->
+
 <div class="container padding-top ">
 	<div class="row padding-top ">
-        <label for="inputType" class="col-sm-6 col-sm-offset-3 control-label padding-top"><font size="16">Hi :) Where are you?</font></label>
-        <div class="col-sm-10 col-sm-offset-1 padding-top">
-          <div class="input-group">
-                <input type="hidden" name="search_param" value="all" id="search_param">
-                <input type="text" class="form-control" name="x" placeholder="Where are you right now?">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-                </span>
-            </div>
+        <label for="inputType" class="col-sm-8 col-sm-offset-2 control-label padding-top"><center><font size="6">Hi there! What's your name?</center></font></label>
+        <div class="col-sm-6 col-sm-offset-3 padding-top">
+          <center><div class="input-group">
+                <input type="text" class="form-control input-lg" name="x" placeholder="Ex. Elon">
+
+            </div></center>
+        </div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row padding-top ">
+        <label for="inputType" class="col-sm-8 col-sm-offset-2 control-label padding-top"><font size="6"><center>Hi Amy! Where are you located?</center></font></label>
+        <div class="col-sm-4 col-sm-offset-4 padding-top">
+          <center><div class="input-group">
+                <input type="text" class="form-control input-lg" name="x" placeholder="Ex. Santa Monica">
+            </div></center>
         </div>
 	</div>
 </div>
 
 <div class = "container">
   <div class = "row padding-top">
-    <label for="inputType" class="col-sm-6 col-sm-offset-3 control-label padding-top"><font size="16">Between what time?</font></label>
+    <label for="inputType" class="col-sm-12 col-sm-offset-0  control-label padding-top"><font size="6"> <center>Okay, you're in Detroit. <br> Around what time would you like your meal?</center></font></label>
     <div class = "col-sm-4 col-sm-offset-4 padding-top">
-    <div class="input-group clockpicker">
-        <input type="text" class="form-control" value="Start">
+    <center><div class="input-group clockpicker">
+        <input type="text" class="form-control input-lg" value="Start">
         <span class="input-group-addon">
             <span class="glyphicon glyphicon-time"></span>
         </span>
-    </div>
+    </div></center>
   </div>
 </div>
   <div class = "row padding-top">
     <div class = "col-sm-4 col-sm-offset-4 padding-top">
-    <div class="input-group clockpicker">
-        <input type="text" class="form-control" value="End">
+    <center><div class="input-group clockpicker">
+        <input type="text" class="form-control input-lg" value="End">
         <span class="input-group-addon">
             <span class="glyphicon glyphicon-time"></span>
         </span>
-    </div>
+    </div></center>
   </div>
 </div>
 </div>
+
+<div class = "container">
+  <div class = "row padding-top">
+    <label for="inputType" class="col-sm-12 col-sm-offset-0  control-label padding-top center"><font size="6"><center>Alright, 7 - 10 it is! <br> What are you craving?</center></font></label>
+    <div class = "col-sm-4 col-sm-offset-4 padding-top">
+      <center><div class="dropdown open">
+        <select class="form-control input-lg">
+    <option value="one">Anything goes</option>
+    <option value="two">Burgers</option>
+    <option value="three">Chinese</option>
+    <option value="four">Italian</option>
+    <option value="five">Japanese</option>
+    <option value="six">Mexican</option>
+    <option value="seven">Pizza</option>
+    <option value="eight">Steak</option>
+</select>
+</div></center>
+  </div>
+</div>
+
+<!-- TODO: Cuisine dropdown (Anything. I'm starving.  Italian. Greek. Sushi.)-->
+
+<div class = "container">
+  <div class = "row padding-top">
+    <label for="inputType" class="col-sm-12  control-label padding-top"><font size="6"><center>Sounds delicious! <br> Last thing is your email, just so we can connect you with your BiteShare.</center></font></label>
+    <div class = "col-sm-4 col-sm-offset-4 padding-top">
+      <center><div class="input-group">
+
+            <input type="text" class="form-control input-lg" name="x" placeholder="Ex. elon.musk@email.com">
+
+        </div></center>
+  </div>
+</div>
+
+<!-- TODO: add email entry -->
+
+<div class = "container">
+  <div class = "row padding-top">
+    <label for="inputType" class="col-sm-12 col-sm-offset-0  control-label padding-top"><font size="6"><center>Thanks! Finding you a BiteShare...</center></font></label>
+    <div class = "col-sm-4 col-sm-offset-4 padding-top">
+
+  </div>
+</div>
+
+
+<!-- TODO: Verify all inputted entries before the submit button -->
 
 
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
