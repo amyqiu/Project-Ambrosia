@@ -1,0 +1,55 @@
+.navbar-inverse {
+	background: #2E2F31;
+	border: 0;
+}
+.navbar-inverse .navbar-nav li a {
+	color: #f7f7f7;
+	font-size: 16px;
+}
+.navbar-inverse .navbar-nav li a:hover {
+	background: white;
+}
+
+.jumbotron {
+	background: white;
+	color: white;
+	text-align: center;
+}
+.jumbotron p {
+	color: white;
+	font-size: 26px;
+}
+
+img.resize{
+   max-width:100%;
+   max-height:100%;
+}
+
+.image {
+   position: relative;
+   width: 100%; /* for IE 6 */
+}
+
+h1 {
+   position: absolute;
+   top: 200px;
+   left: 0;
+   width: 100%;
+}
+
+h1 span.spacer {
+   padding:20px 20px;
+}
+
+.stylish-input-group .input-group-addon{
+    background: white !important;
+}
+.stylish-input-group .form-control{
+	border-right:0;
+	box-shadow:0 0 0;
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
