@@ -24,13 +24,13 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#"><font color="FFFFFF">BiteShare</font></a>
+			<a class="navbar-brand" href="#"><font color="FFFFFF" size = "6">BiteShare</font></a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">About</a></li>
-				<li><a href="#">FAQ</a></li>
-				<li><a href="#">Contact</a></li>
+				<li><a href="#"> <font size = "4"> About</font></a></li>
+				<li><a href="#"><font size = "4">FAQ</font></a></li>
+				<li><a href="#"><font size = "4">Contact</font></a></li>
 			</ul>
 		</div>
 	</div>
@@ -172,7 +172,7 @@
   var nameEntered = false;
 
   var addLocation = function() {
-    containerDiv.className = "container";
+    containerDiv.className = "container padding-top";
 
     var rowDiv = document.createElement("DIV");
     rowDiv.className = "row ";
@@ -272,7 +272,7 @@ var timeAdded = false;
     userText.setAttribute("size", "6");
     userText.setAttribute("color",  "#43494E");
     var z = document.createElement('div');
-    z.innerHTML = "Okay, you're in " + document.getElementById('location').value + ". <br> Around what time would you like your meal?";
+    z.innerHTML = "Okay, you're in " + document.getElementById('location').value + ". <br> Around what time would you like to eat?";
     userText.appendChild(z);
     labelComponent.appendChild(userText);
 
@@ -284,13 +284,13 @@ var timeAdded = false;
 
 
     var clockPickerDiv = document.createElement("DIV");
-    clockPickerDiv.className = "input-group clockpicker padding-top";
+    clockPickerDiv.className = "input-group clockpicker";
 
 
     var inputComponent = document.createElement("INPUT");
     inputComponent.setAttribute("type", "text");
     inputComponent.className = "form-control input-lg";
-    inputComponent.setAttribute("value", "Start");
+    inputComponent.setAttribute("placeholder", "Start");
 
     clockPickerDiv.appendChild(inputComponent);
     clockPickerDiv.setAttribute("align", "center");
@@ -314,7 +314,7 @@ var timeAdded = false;
 
 
     var splitDiv2 = document.createElement("DIV");
-    splitDiv2.className = "col-sm-4 col-sm-offset-4 padding-top";
+    splitDiv2.className = "col-sm-4 col-sm-offset-4";
 
     var clockPickerDiv2 = document.createElement("DIV");
     clockPickerDiv2.className = "input-group clockpicker";
@@ -324,7 +324,7 @@ var timeAdded = false;
     inputComponentEnd.setAttribute("type", "text");
     inputComponentEnd.setAttribute("id", "time");
     inputComponentEnd.className = "form-control input-lg";
-    inputComponentEnd.setAttribute("value", "End");
+    inputComponentEnd.setAttribute("placeholder", "End");
     inputComponentEnd.setAttribute("onkeydown", "if (event.keyCode == 13 && !dropdownAdded) { addDropdown()}");
 
     clockPickerDiv2.appendChild(inputComponentEnd);
@@ -370,6 +370,24 @@ var timeAdded = false;
 
       document.getElementsByTagName('body')[0].insertAdjacentHTML("beforeend", clockScript);
 
+      function fadeIn(el) {
+        el.style.opacity = 0;
+
+        var tick = function() {
+          el.style.opacity = +el.style.opacity + 0.005;
+
+
+          if (+el.style.opacity < 1) {
+            (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+          }
+        };
+
+        tick();
+      };
+
+      fadeIn(containerDiv);
+
+
   };
 
   </script>
@@ -382,7 +400,7 @@ var timeAdded = false;
 
       var elem = document.getElementById("time");
       var containerDiv = document.createElement("DIV");
-      containerDiv.className = "container";
+      containerDiv.className = "container padding-top";
 
       var rowDiv = document.createElement("DIV");
       rowDiv.className = "row ";
@@ -498,7 +516,7 @@ var timeAdded = false;
     var emailAdded = false;
     var addEmail = function() {
       var containerDiv = document.createElement("DIV");
-      containerDiv.className = "container";
+      containerDiv.className = "container padding-top";
 
       var rowDiv = document.createElement("DIV");
       rowDiv.className = "row ";
@@ -513,7 +531,7 @@ var timeAdded = false;
       userText.setAttribute("color", "#43494E");
 
       var z = document.createElement('div');
-      z.innerHTML = "Sounds good! <br> Last thing is your email, just so we can connect you with your BiteShare companion.";
+      z.innerHTML = "Sounds good! <br> Last thing is your email, to connect you with your BiteShare companion.";
       userText.appendChild(z);
 
       labelComponent.appendChild(userText);
@@ -572,7 +590,7 @@ var timeAdded = false;
 
   var searching = function() {
     var containerDiv = document.createElement("DIV");
-    containerDiv.className = "container";
+    containerDiv.className = "container padding-top";
 
     var rowDiv = document.createElement("DIV");
     rowDiv.className = "row ";
@@ -599,7 +617,8 @@ var timeAdded = false;
     document.getElementsByTagName('body')[0].appendChild(containerDiv);
     searched = true;
 
-    /* TODO: ADD YO SHIT
+
+    // TODO: ADD YO SHIT
 
 
       function fadeIn(el) {
