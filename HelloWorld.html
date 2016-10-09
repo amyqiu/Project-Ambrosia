@@ -165,6 +165,8 @@
 
 <script type = "text/javascript">
 // Add hello message with location prompt.
+  var locationAdded = false;
+
   var elem = document.getElementById("person");
   var containerDiv = document.createElement("DIV");
   var nameEntered = false;
@@ -205,7 +207,7 @@
     inputComponent.setAttribute("id", "location");
     inputComponent.className = "form-control input-lg";
     inputComponent.setAttribute("name", "x");
-    inputComponent.setAttribute("onkeydown", "if (event.keyCode == 13) { addTime()}");
+    inputComponent.setAttribute("onkeydown", "if (event.keyCode == 13 && !timeAdded) { addTime()}");
     inputComponent.setAttribute("placeholder", "Ex. Santa Monica");
 
     inputDiv.appendChild(inputComponent);
@@ -219,8 +221,10 @@
 
 
   elem.onkeyup = function(e) {
-    if (e.keyCode == 13) {
+    if (e.keyCode == 13 && !locationAdded) {
       addLocation(); // Harcoded different versions
+      locationAdded = true;
+
 
       function fadeIn(el) {
         el.style.opacity = 0;
@@ -249,7 +253,7 @@
 <script type = "text/javascript">
 // Add location message with time prompt.
 
-
+var timeAdded = false;
 
   var addTime = function() {
     var elem = document.getElementById('location');
@@ -312,8 +316,6 @@
     var splitDiv2 = document.createElement("DIV");
     splitDiv2.className = "col-sm-4 col-sm-offset-4 padding-top";
 
-
-
     var clockPickerDiv2 = document.createElement("DIV");
     clockPickerDiv2.className = "input-group clockpicker";
     clockPickerDiv2.setAttribute("align", "center");
@@ -323,7 +325,7 @@
     inputComponentEnd.setAttribute("id", "time");
     inputComponentEnd.className = "form-control input-lg";
     inputComponentEnd.setAttribute("value", "End");
-    inputComponentEnd.setAttribute("onkeydown", "if (event.keyCode == 13) { addDropdown()}");
+    inputComponentEnd.setAttribute("onkeydown", "if (event.keyCode == 13 && !dropdownAdded) { addDropdown()}");
 
     clockPickerDiv2.appendChild(inputComponentEnd);
 
@@ -341,7 +343,7 @@
     containerDiv.appendChild(rowDiv2);
 
     document.getElementsByTagName('body')[0].appendChild(containerDiv);
-
+    timeAdded = true;
 
       var clockScript = `<script type="text/javascript" src="assets/js/jquery.min.js"><\/script>
       <script type="text/javascript" src="assets/js/bootstrap.min.js"><\/script>
@@ -374,6 +376,7 @@
 
   <script type = "text/javascript">
   // Add hello message with location prompt.
+    var dropdownAdded = false;
 
     var addDropdown = function() {
 
@@ -455,7 +458,7 @@
       option8.innerHTML = "Steak";
       inputComponent.appendChild(option8);
 
-      inputComponent.setAttribute("onchange", "addEmail()");
+      inputComponent.setAttribute("onchange", "if (!emailAdded) {addEmail()}");
 
       inputDiv.appendChild(inputComponent);
       formDiv.appendChild(inputDiv);
@@ -464,6 +467,8 @@
       containerDiv.appendChild(rowDiv);
 
       document.getElementsByTagName('body')[0].appendChild(containerDiv);
+      dropdownAdded = true;
+
 
         function fadeIn(el) {
           el.style.opacity = 0;
@@ -481,15 +486,16 @@
         };
 
         fadeIn(containerDiv);
-
       };
+
+
 
   </script>
 
 
   <script type = "text/javascript">
   // Add hello message with location prompt.
-
+    var emailAdded = false;
     var addEmail = function() {
       var containerDiv = document.createElement("DIV");
       containerDiv.className = "container";
@@ -507,7 +513,7 @@
       userText.setAttribute("color", "#43494E");
 
       var z = document.createElement('div');
-      z.innerHTML = "Sounds good! <br> Last thing is your email, just so we can connect you with your BiteShare companinion.";
+      z.innerHTML = "Sounds good! <br> Last thing is your email, just so we can connect you with your BiteShare companion.";
       userText.appendChild(z);
 
       labelComponent.appendChild(userText);
@@ -527,7 +533,7 @@
       inputComponent.setAttribute("id", "location");
       inputComponent.className = "form-control input-lg";
       inputComponent.setAttribute("name", "x");
-      inputComponent.setAttribute("onkeydown", "if (event.keyCode == 13) { searching()}");
+      inputComponent.setAttribute("onkeydown", "if (event.keyCode == 13 && !searched) { searching()}");
       inputComponent.setAttribute("placeholder", "Ex. zuckersss@email.com");
 
       inputDiv.appendChild(inputComponent);
@@ -537,6 +543,7 @@
       containerDiv.appendChild(rowDiv);
 
       document.getElementsByTagName('body')[0].appendChild(containerDiv);
+      emailAdded = true;
 
         function fadeIn(el) {
           el.style.opacity = 0;
@@ -561,6 +568,7 @@
 
 <script type = "text/javascript">
 // Add hello message with location prompt.
+  var searched = false;
 
   var searching = function() {
     var containerDiv = document.createElement("DIV");
@@ -589,6 +597,10 @@
     containerDiv.appendChild(rowDiv);
 
     document.getElementsByTagName('body')[0].appendChild(containerDiv);
+    searched = true;
+
+    /* TODO: ADD YO SHIT
+
 
       function fadeIn(el) {
         el.style.opacity = 0;
