@@ -8,12 +8,11 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="dist/bootstrap-clockpicker.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
-
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-static-top">
@@ -42,7 +41,7 @@
 
       <img  class="resize" src="images/photo-1464219222984-216ebffaaf85 Cropped.jpg" alt="" />
 
-      <h1><span><p style="color:White; font-size: 88px;text-align:center">Never eat alone again.</p><span></h1>
+      <h1><span><p style="color:White; font-size: 88px;text-align:center">Food is best enjoyed in good company.</p><span></h1>
 
     </div>
 
@@ -57,7 +56,7 @@
         <label for="inputType" class="col-sm-8 col-sm-offset-2 control-label padding-top"><font size="6" color = "#43494E">Hi there! What's your name?</font></label>
         <div class="col-sm-6 col-sm-offset-3 padding-top">
           <center><div class="input-group">
-                <input type="text" id="test" class="form-control input-lg" name="x" placeholder="Ex. Elon">
+                <input type="text" id="person" class="form-control input-lg" name="x" placeholder="Ex. Elon">
             </div></center>
         </div>
 	</div>
@@ -76,6 +75,7 @@
 </div>
 -->
 
+<!--
 
 <div class = "container">
   <div class = "row padding-top">
@@ -101,6 +101,10 @@
 </div>
 </div>
 
+-->
+
+<!--
+
 <div class = "container">
   <div class = "row padding-top">
     <label for="inputType" class="col-sm-12 col-sm-offset-0  control-label padding-top center"><font size="6" color = "#43494E"><center>Alright, 7 - 10 it is! <br> What are you craving?</center></font></label>
@@ -120,7 +124,12 @@
   </div>
 </div>
 
+-->
+
+
 <!-- TODO: Cuisine dropdown (Anything. I'm starving.  Italian. Greek. Sushi.)-->
+
+<!--
 
 <div class = "container">
   <div class = "row padding-top">
@@ -134,7 +143,11 @@
   </div>
 </div>
 
+-->
+
 <!-- TODO: add email entry -->
+
+<!--
 
 <div class = "container">
   <div class = "row padding-top">
@@ -144,97 +157,19 @@
   </div>
 </div>
 
+-->
+
 
 <!-- TODO: Verify all inputted entries before the submit button -->
 
 
-<script type="text/javascript" src="assets/js/jquery.min.js"></script>
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="dist/bootstrap-clockpicker.min.js"></script>
-
-<script type="text/javascript">
-$('.clockpicker').clockpicker({donetext: 'Done'})
-    .find('input').change(function(){
-        // TODO: time changed
-        console.log(this.value);
-    });
-$('#demo-input').clockpicker({
-    autoclose: true
-});
-
-//if (something) {
-    // Manual operations (after clockpicker is initialized).
-    //$('#demo-input').clockpicker('show') // Or hide, remove ...
-            //.clockpicker('toggleView', 'minutes');
-//}
-</script>
-
-<!--
 <script type = "text/javascript">
-// Add Hello message with location prompt.
-  var elem = document.getElementById("test");
-
-  var addDiv = function() {
-    var containerDiv = document.createElement("DIV");
-    containerDiv.className = "container padding-top";
-
-    var rowDiv = document.createElement("DIV");
-    rowDiv.className = "row padding-top";
-    rowDiv.setAttribute("align", "center");
-
-    var labelComponent = document.createElement("LABEL");
-    labelComponent.htmlFor = "inputType";
-    labelComponent.className = "col-sm-8 col-sm-offset-2 control-label padding-top";
-
-    var userText = document.createElement("FONT");
-    userText.setAttribute("size", "6");
-    var z = document.createElement('div');
-    z.innerHTML = "Hi " + document.getElementById("test").value + "! Where are you located?";
-    userText.appendChild(z);
-
-    labelComponent.appendChild(userText);
-
-    rowDiv.appendChild(labelComponent);
-
-    var formDiv = document.createElement("DIV");
-    formDiv.className = "col-sm-4 col-sm-offset-4 padding-top";
-    formDiv.setAttribute("align", "center");
-
-    var inputDiv = document.createElement("DIV");
-    inputDiv.className = "input-group";
-
-    var inputComponent = document.createElement("INPUT");
-
-    inputComponent.setAttribute("type", "text");
-    inputComponent.className = "form-control input-lg";
-    inputComponent.setAttribute("name", "x");
-    inputComponent.setAttribute("placeholder", "Ex. Santa Monica")
-
-    inputDiv.appendChild(inputComponent);
-    formDiv.appendChild(inputDiv);
-    rowDiv.appendChild(formDiv);
-
-    containerDiv.appendChild(rowDiv);
-
-    document.getElementsByTagName('body')[0].appendChild(containerDiv);
-  };
-
-  elem.onkeyup = function() {
-    if (e.keyCode == 13) {
-      addDiv(); // Harcoded different versions
-    };
-  };
-
-</script>
--->
-
-
-<script type = "text/javascript">
-// Add Hello message with location prompt.
-  var elem = document.getElementById("test");
+// Add hello message with location prompt.
+  var elem = document.getElementById("person");
   var containerDiv = document.createElement("DIV");
+  var nameEntered = false;
 
-  var addDiv = function() {
+  var addLocation = function() {
     containerDiv.className = "container";
 
     var rowDiv = document.createElement("DIV");
@@ -250,7 +185,7 @@ $('#demo-input').clockpicker({
     userText.setAttribute("color", "#43494E");
 
     var z = document.createElement('div');
-    z.innerHTML = "Hi " + document.getElementById("test").value + "! Where are you located?";
+    z.innerHTML = "Hi " + document.getElementById("person").value + "! Where are you located?";
     userText.appendChild(z);
 
     labelComponent.appendChild(userText);
@@ -267,9 +202,11 @@ $('#demo-input').clockpicker({
     var inputComponent = document.createElement("INPUT");
 
     inputComponent.setAttribute("type", "text");
+    inputComponent.setAttribute("id", "location");
     inputComponent.className = "form-control input-lg";
     inputComponent.setAttribute("name", "x");
-    inputComponent.setAttribute("placeholder", "Ex. Santa Monica")
+    inputComponent.setAttribute("onkeydown", "if (event.keyCode == 13) { addTime()}");
+    inputComponent.setAttribute("placeholder", "Ex. Santa Monica");
 
     inputDiv.appendChild(inputComponent);
     formDiv.appendChild(inputDiv);
@@ -280,9 +217,10 @@ $('#demo-input').clockpicker({
     document.getElementsByTagName('body')[0].appendChild(containerDiv);
   };
 
+
   elem.onkeyup = function(e) {
     if (e.keyCode == 13) {
-      addDiv(); // Harcoded different versions
+      addLocation(); // Harcoded different versions
 
       function fadeIn(el) {
         el.style.opacity = 0;
@@ -300,13 +238,398 @@ $('#demo-input').clockpicker({
       }
 
       fadeIn(containerDiv);
+      nameEntered = true;
+      console.log("Name entered");
     };
   };
+
+
+</script>
+
+<script type = "text/javascript">
+// Add location message with time prompt.
+
+
+
+  var addTime = function() {
+    var elem = document.getElementById('location');
+    var containerDiv = document.createElement("DIV");
+    containerDiv.className = "container";
+
+    var rowDiv = document.createElement("DIV");
+    rowDiv.className = "row padding-top";
+    rowDiv.setAttribute("align", "center");
+
+    var labelComponent = document.createElement("LABEL");
+    labelComponent.htmlFor = "inputType";
+    labelComponent.className = "col-sm-12 col-sm-offset-0  control-label padding-top";
+
+    var userText = document.createElement("FONT");
+    userText.setAttribute("size", "6");
+    userText.setAttribute("color",  "#43494E");
+    var z = document.createElement('div');
+    z.innerHTML = "Okay, you're in " + document.getElementById('location').value + ". <br> Around what time would you like your meal?";
+    userText.appendChild(z);
+    labelComponent.appendChild(userText);
+
+    rowDiv.appendChild(labelComponent);
+
+    var splitDiv = document.createElement("DIV");
+    splitDiv.className = "col-sm-4 col-sm-offset-4 padding-top";
+
+
+
+    var clockPickerDiv = document.createElement("DIV");
+    clockPickerDiv.className = "input-group clockpicker padding-top";
+
+
+    var inputComponent = document.createElement("INPUT");
+    inputComponent.setAttribute("type", "text");
+    inputComponent.className = "form-control input-lg";
+    inputComponent.setAttribute("value", "Start");
+
+    clockPickerDiv.appendChild(inputComponent);
+    clockPickerDiv.setAttribute("align", "center");
+
+    var addonSpan = document.createElement("SPAN");
+    addonSpan.className = "input-group-addon";
+
+    var glyphiconSpan = document.createElement("SPAN");
+    glyphiconSpan.className = "glyphicon glyphicon-time";
+
+    addonSpan.appendChild(glyphiconSpan);
+    clockPickerDiv.appendChild(addonSpan);
+    splitDiv.appendChild(clockPickerDiv);
+    rowDiv.appendChild(splitDiv);
+
+
+    containerDiv.appendChild(rowDiv);
+
+    var rowDiv2 = document.createElement("DIV");
+    rowDiv2.className = "row padding-top";
+
+
+    var splitDiv2 = document.createElement("DIV");
+    splitDiv2.className = "col-sm-4 col-sm-offset-4 padding-top";
+
+
+
+    var clockPickerDiv2 = document.createElement("DIV");
+    clockPickerDiv2.className = "input-group clockpicker";
+    clockPickerDiv2.setAttribute("align", "center");
+
+    var inputComponentEnd = document.createElement("INPUT");
+    inputComponentEnd.setAttribute("type", "text");
+    inputComponentEnd.setAttribute("id", "time");
+    inputComponentEnd.className = "form-control input-lg";
+    inputComponentEnd.setAttribute("value", "End");
+    inputComponentEnd.setAttribute("onkeydown", "if (event.keyCode == 13) { addDropdown()}");
+
+    clockPickerDiv2.appendChild(inputComponentEnd);
+
+    var addonSpan2 = document.createElement("SPAN");
+    addonSpan2.className = "input-group-addon";
+
+    var glyphiconSpan2 = document.createElement("SPAN");
+    glyphiconSpan2.className = "glyphicon glyphicon-time";
+
+    addonSpan2.appendChild(glyphiconSpan2);
+    clockPickerDiv2.appendChild(addonSpan2);
+    splitDiv2.appendChild(clockPickerDiv2);
+    rowDiv2.appendChild(splitDiv2);
+
+    containerDiv.appendChild(rowDiv2);
+
+    document.getElementsByTagName('body')[0].appendChild(containerDiv);
+
+
+      var clockScript = `<script type="text/javascript" src="assets/js/jquery.min.js"><\/script>
+      <script type="text/javascript" src="assets/js/bootstrap.min.js"><\/script>
+      <script type="text/javascript" src="dist/bootstrap-clockpicker.min.js"><\/script>
+
+      <script type="text/javascript">
+        $('.clockpicker').clockpicker({donetext: 'Done'})
+          .find('input').change(function(){
+              // TODO: time changed
+              console.log(this.value);
+          });
+      $('#demo-input').clockpicker({
+          autoclose: true
+      });
+
+
+      if (something) {
+        // Manual operations (after clockpicker is initialized).
+        $('#demo-input').clockpicker('show') // Or hide, remove ...
+            .clockpicker('toggleView', 'minutes');
+      <\/script>
+
+      `;
+
+      document.getElementsByTagName('body')[0].insertAdjacentHTML("beforeend", clockScript);
+
+  };
+
+  </script>
+
+  <script type = "text/javascript">
+  // Add hello message with location prompt.
+
+    var addDropdown = function() {
+
+      var elem = document.getElementById("time");
+      var containerDiv = document.createElement("DIV");
+      containerDiv.className = "container";
+
+      var rowDiv = document.createElement("DIV");
+      rowDiv.className = "row ";
+      rowDiv.setAttribute("align", "center");
+
+      var labelComponent = document.createElement("LABEL");
+      labelComponent.htmlFor = "inputType";
+      labelComponent.className = "col-sm-12 col-sm-offset-0 control-label padding-top";
+
+      var userText = document.createElement("FONT");
+      userText.setAttribute("size", "6");
+      userText.setAttribute("color", "#43494E");
+
+      var z = document.createElement('div');
+      z.innerHTML = "Alright! What are you craving?";
+      userText.appendChild(z);
+
+      labelComponent.appendChild(userText);
+
+      rowDiv.appendChild(labelComponent);
+
+      var formDiv = document.createElement("DIV");
+      formDiv.className = "col-sm-4 col-sm-offset-4 padding-top";
+      formDiv.setAttribute("align", "center");
+
+      var inputDiv = document.createElement("DIV");
+      inputDiv.className = "dropdown open";
+
+      var inputComponent = document.createElement("SELECT");
+      inputComponent.className = "form-control input-lg";
+
+      var option0 = document.createElement("OPTION");
+      option0.setAttribute("value", null);
+      inputComponent.appendChild(option0);
+
+      var option1 = document.createElement("OPTION");
+      option1.setAttribute("value", "one");
+      option1.innerHTML = "Anything Goes!";
+      inputComponent.appendChild(option1);
+
+      var option2 = document.createElement("OPTION");
+      option2.setAttribute("value", "two");
+      option2.innerHTML = "Burgers";
+      inputComponent.appendChild(option2);
+
+      var option3 = document.createElement("OPTION");
+      option3.setAttribute("value", "three");
+      option3.innerHTML = "Chinese";
+      inputComponent.appendChild(option3);
+
+      var option4 = document.createElement("OPTION");
+      option4.setAttribute("value", "four");
+      option4.innerHTML = "Italian";
+      inputComponent.appendChild(option4);
+
+      var option5 = document.createElement("OPTION");
+      option5.setAttribute("value", "five");
+      option5.innerHTML = "Japanese";
+      inputComponent.appendChild(option5);
+
+      var option6 = document.createElement("OPTION");
+      option6.setAttribute("value", "six");
+      option6.innerHTML = "Mexican";
+      inputComponent.appendChild(option6);
+
+      var option7 = document.createElement("OPTION");
+      option7.setAttribute("value", "seven");
+      option7.innerHTML = "Pizza";
+      inputComponent.appendChild(option7);
+
+      var option8 = document.createElement("OPTION");
+      option8.setAttribute("value", "eight");
+      option8.innerHTML = "Steak";
+      inputComponent.appendChild(option8);
+
+      inputComponent.setAttribute("onchange", "addEmail()");
+
+      inputDiv.appendChild(inputComponent);
+      formDiv.appendChild(inputDiv);
+      rowDiv.appendChild(formDiv);
+
+      containerDiv.appendChild(rowDiv);
+
+      document.getElementsByTagName('body')[0].appendChild(containerDiv);
+
+        function fadeIn(el) {
+          el.style.opacity = 0;
+
+          var tick = function() {
+            el.style.opacity = +el.style.opacity + 0.005;
+
+
+            if (+el.style.opacity < 1) {
+              (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+            }
+          };
+
+          tick();
+        };
+
+        fadeIn(containerDiv);
+
+      };
+
+  </script>
+
+
+  <script type = "text/javascript">
+  // Add hello message with location prompt.
+
+    var addEmail = function() {
+      var containerDiv = document.createElement("DIV");
+      containerDiv.className = "container";
+
+      var rowDiv = document.createElement("DIV");
+      rowDiv.className = "row ";
+      rowDiv.setAttribute("align", "center");
+
+      var labelComponent = document.createElement("LABEL");
+      labelComponent.htmlFor = "inputType";
+      labelComponent.className = "col-sm-12 control-label padding-top";
+
+      var userText = document.createElement("FONT");
+      userText.setAttribute("size", "6");
+      userText.setAttribute("color", "#43494E");
+
+      var z = document.createElement('div');
+      z.innerHTML = "Sounds good! <br> Last thing is your email, just so we can connect you with your BiteShare companinion.";
+      userText.appendChild(z);
+
+      labelComponent.appendChild(userText);
+
+      rowDiv.appendChild(labelComponent);
+
+      var formDiv = document.createElement("DIV");
+      formDiv.className = "col-sm-4 col-sm-offset-4 padding-top";
+      formDiv.setAttribute("align", "center");
+
+      var inputDiv = document.createElement("DIV");
+      inputDiv.className = "input-group";
+
+      var inputComponent = document.createElement("INPUT");
+
+      inputComponent.setAttribute("type", "text");
+      inputComponent.setAttribute("id", "location");
+      inputComponent.className = "form-control input-lg";
+      inputComponent.setAttribute("name", "x");
+      inputComponent.setAttribute("onkeydown", "if (event.keyCode == 13) { searching()}");
+      inputComponent.setAttribute("placeholder", "Ex. zuckersss@email.com");
+
+      inputDiv.appendChild(inputComponent);
+      formDiv.appendChild(inputDiv);
+      rowDiv.appendChild(formDiv);
+
+      containerDiv.appendChild(rowDiv);
+
+      document.getElementsByTagName('body')[0].appendChild(containerDiv);
+
+        function fadeIn(el) {
+          el.style.opacity = 0;
+
+          var tick = function() {
+            el.style.opacity = +el.style.opacity + 0.005;
+
+
+            if (+el.style.opacity < 1) {
+              (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16)
+            }
+          };
+
+          tick();
+        }
+
+        fadeIn(containerDiv);
+        };
+
+
+</script>
+
+<script type = "text/javascript">
+// Add hello message with location prompt.
+
+  var searching = function() {
+    var containerDiv = document.createElement("DIV");
+    containerDiv.className = "container";
+
+    var rowDiv = document.createElement("DIV");
+    rowDiv.className = "row ";
+    rowDiv.setAttribute("align", "center");
+
+    var labelComponent = document.createElement("LABEL");
+    labelComponent.htmlFor = "inputType";
+    labelComponent.className = "col-sm-12 control-label padding-top";
+
+    var userText = document.createElement("FONT");
+    userText.setAttribute("size", "6");
+    userText.setAttribute("color", "#43494E");
+
+    var z = document.createElement('div');
+    z.innerHTML = "Thanks! Finding you a BiteShare...";
+    userText.appendChild(z);
+
+    labelComponent.appendChild(userText);
+
+    rowDiv.appendChild(labelComponent);
+
+    containerDiv.appendChild(rowDiv);
+
+    document.getElementsByTagName('body')[0].appendChild(containerDiv);
+
+      function fadeIn(el) {
+        el.style.opacity = 0;
+
+        var tick = function() {
+          el.style.opacity = +el.style.opacity + 0.005;
+
+
+          if (+el.style.opacity < 1) {
+            (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16)
+          }
+        };
+
+        tick();
+      }
+
+      fadeIn(containerDiv);
+      };
+
 
 </script>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+
+
+<!--
+  if (document.getElementById("location") != null && nameEntered) {
+    elem.onkeyup = function(e) {
+      if (e.keyCode == 13) {
+        console.log("Location entered");
+        addTime(); // Hardcoded different versions
+
+      };
+    };
+  };
+
+</script> */
+
+-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
   </body>
+
 </html>
