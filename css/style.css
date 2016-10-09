@@ -1,6 +1,7 @@
 body {
     padding-bottom: 50px;
-
+    background-color: #E9E9E9;
+    font-family: 'PT Sans',sans-serif;
 }
 
 .padding-0{
@@ -17,11 +18,11 @@ body {
 }
 
 .navbar-inverse {
-	background: #2E2F31;
+	background: #2E2E2D;
 	border: 0;
 }
 .navbar-inverse .navbar-nav li a {
-	color: #f7f7f7;
+	color: #FFFFFF;
 	font-size: 16px;
 }
 .navbar-inverse .navbar-nav li a:hover {
@@ -29,7 +30,7 @@ body {
 }
 
 .jumbotron {
-	background: white;
+	background-color: #E9E9E9;
 	color: white;
 	text-align: center;
   margin-bottom: 10px;
