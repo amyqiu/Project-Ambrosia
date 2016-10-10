@@ -8,13 +8,15 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="dist/bootstrap-clockpicker.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="C:/Users/amy-q/Documents/GitHub/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+  <link href="C:/Users/amy-q/Documents/GitHub/bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
   </head>
-  <body>
+  <body class = "background-color">
     <nav class="navbar navbar-inverse navbar-static-top">
 	<div class="container">
 		<div class="navbar-header">
@@ -35,13 +37,13 @@
 		</div>
 	</div>
 </nav>
-<div class="jumbotron">
-	<div class="col-md-12 container padding-0">
-    <div class="image padding-0">
+<div class="jumbotron background-color">
+	<div class="col-md-12 container padding-0 background-color">
+    <div class="image padding-0 background-color">
 
-      <img  class="resize" src="images/photo-1464219222984-216ebffaaf85 Cropped.jpg" alt="" />
+      <img  class="resize background-color" src="images/photo-1464219222984-216ebffaaf85 Cropped.jpg" alt="" />
 
-      <h1><span><p style="color:White; font-size: 88px;text-align:center">Food is best enjoyed in good company.</p><span></h1>
+      <h1><span><p style="color:White; font-size: 88px;text-align:center">Food is best enjoyed in <br> good company.</p><span></h1>
 
     </div>
 
@@ -431,48 +433,49 @@ var timeAdded = false;
 
       var inputComponent = document.createElement("SELECT");
       inputComponent.className = "form-control input-lg";
+      inputComponent.setAttribute("id", "foodtype");
 
       var option0 = document.createElement("OPTION");
       option0.setAttribute("value", null);
       inputComponent.appendChild(option0);
 
       var option1 = document.createElement("OPTION");
-      option1.setAttribute("value", "one");
+      option1.setAttribute("value", "absolutely anything");
       option1.innerHTML = "Anything Goes!";
       inputComponent.appendChild(option1);
 
       var option2 = document.createElement("OPTION");
-      option2.setAttribute("value", "two");
+      option2.setAttribute("value", "burgers");
       option2.innerHTML = "Burgers";
       inputComponent.appendChild(option2);
 
       var option3 = document.createElement("OPTION");
-      option3.setAttribute("value", "three");
+      option3.setAttribute("value", "Chinese food");
       option3.innerHTML = "Chinese";
       inputComponent.appendChild(option3);
 
       var option4 = document.createElement("OPTION");
-      option4.setAttribute("value", "four");
+      option4.setAttribute("value", "Italian food");
       option4.innerHTML = "Italian";
       inputComponent.appendChild(option4);
 
       var option5 = document.createElement("OPTION");
-      option5.setAttribute("value", "five");
+      option5.setAttribute("value", "Japanese food");
       option5.innerHTML = "Japanese";
       inputComponent.appendChild(option5);
 
       var option6 = document.createElement("OPTION");
-      option6.setAttribute("value", "six");
+      option6.setAttribute("value", "Mexican food");
       option6.innerHTML = "Mexican";
       inputComponent.appendChild(option6);
 
       var option7 = document.createElement("OPTION");
-      option7.setAttribute("value", "seven");
+      option7.setAttribute("value", "pizza");
       option7.innerHTML = "Pizza";
       inputComponent.appendChild(option7);
 
       var option8 = document.createElement("OPTION");
-      option8.setAttribute("value", "eight");
+      option8.setAttribute("value", "steak");
       option8.innerHTML = "Steak";
       inputComponent.appendChild(option8);
 
@@ -548,10 +551,10 @@ var timeAdded = false;
       var inputComponent = document.createElement("INPUT");
 
       inputComponent.setAttribute("type", "text");
-      inputComponent.setAttribute("id", "location");
+      inputComponent.setAttribute("id", "email");
       inputComponent.className = "form-control input-lg";
       inputComponent.setAttribute("name", "x");
-      inputComponent.setAttribute("onkeydown", "if (event.keyCode == 13 && !searched) { searching()}");
+      inputComponent.setAttribute("onkeydown", "if (event.keyCode == 13 && !background) { searching()}");
       inputComponent.setAttribute("placeholder", "Ex. zuckersss@email.com");
 
       inputDiv.appendChild(inputComponent);
@@ -584,9 +587,13 @@ var timeAdded = false;
 
 </script>
 
+<script src="C:/Users/amy-q/Documents/GitHub/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="C:/Users/amy-q/Documents/GitHub/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="C:/Users/amy-q/Documents/GitHub/bower_components/bootstrap-waitingfor/build/bootstrap-waitingfor.js"></script>
+
 <script type = "text/javascript">
 // Add hello message with location prompt.
-  var searched = false;
+  var background = false;
 
   var searching = function() {
     var containerDiv = document.createElement("DIV");
@@ -605,7 +612,7 @@ var timeAdded = false;
     userText.setAttribute("color", "#43494E");
 
     var z = document.createElement('div');
-    z.innerHTML = "Thanks! Finding you a BiteShare...";
+    z.innerHTML = "Adam is also looking for " + document.getElementById("foodtype").value + " in " + document.getElementById("location").value + " <br> Contact him at adam.baker@gmail.com to share a bite. Bon appetite :)";
     userText.appendChild(z);
 
     labelComponent.appendChild(userText);
@@ -615,7 +622,7 @@ var timeAdded = false;
     containerDiv.appendChild(rowDiv);
 
     document.getElementsByTagName('body')[0].appendChild(containerDiv);
-    searched = true;
+    background = true;
 
 
     // TODO: ADD YO SHIT
@@ -637,7 +644,76 @@ var timeAdded = false;
       }
 
       fadeIn(containerDiv);
+      wait();
       };
+
+      var waitingDialog = waitingDialog || (function ($) {
+    'use strict';
+
+	// Creating modal dialog's DOM
+	var $dialog = $(
+		'<div class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true" style="padding-top:15%; overflow-y:visible;">' +
+		'<div class="modal-dialog modal-m">' +
+		'<div class="modal-content">' +
+			'<div class="modal-header"><h3 style="margin:0;"></h3></div>' +
+			'<div class="modal-body">' +
+				'<div class="progress progress-striped active" style="margin-bottom:0;"><div class="progress-bar" style="width: 100%"></div></div>' +
+			'</div>' +
+		'</div></div></div>');
+
+	return {
+		/**
+		 * Opens our dialog
+		 * @param message Custom message
+		 * @param options Custom options:
+		 * 				  options.dialogSize - bootstrap postfix for dialog size, e.g. "sm", "m";
+		 * 				  options.progressType - bootstrap postfix for progress bar type, e.g. "success", "warning".
+		 */
+		show: function (message, options) {
+			// Assigning defaults
+			if (typeof options === 'undefined') {
+				options = {};
+			}
+			if (typeof message === 'undefined') {
+				message = 'Loading';
+			}
+			var settings = $.extend({
+				dialogSize: 'm',
+				progressType: '',
+				onHide: null // This callback runs after the dialog was hidden
+			}, options);
+
+			// Configuring dialog
+			$dialog.find('.modal-dialog').attr('class', 'modal-dialog').addClass('modal-' + settings.dialogSize);
+			$dialog.find('.progress-bar').attr('class', 'progress-bar');
+			if (settings.progressType) {
+				$dialog.find('.progress-bar').addClass('progress-bar-' + settings.progressType);
+			}
+			$dialog.find('h3').text(message);
+			// Adding callbacks
+			if (typeof settings.onHide === 'function') {
+				$dialog.off('hidden.bs.modal').on('hidden.bs.modal', function (e) {
+					settings.onHide.call($dialog);
+				});
+			}
+			// Opening dialog
+			$dialog.modal();
+		},
+		/**
+		 * Closes dialog
+		 */
+		hide: function () {
+			$dialog.modal('hide');
+		}
+	};
+})(jQuery);
+
+
+var wait = function(){
+      waitingDialog.show('Finding you a BiteShare');
+      setTimeout(function () {
+        waitingDialog.hide();
+      }, 1000);};
 
 
 </script>
@@ -659,6 +735,7 @@ var timeAdded = false;
 </script> */
 
 -->
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
   </body>

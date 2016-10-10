@@ -1,20 +1,23 @@
 body {
     padding-bottom: 50px;
-    background-color: #E9E9E9;
+    background: #EEEEEE;
     font-family: 'PT Sans',sans-serif;
 }
 
 .padding-0{
   padding:0 0 0 0;
+  background: #EEEEEE;
 }
 
 .padding-top{
   padding-top:20px;
   margin-top: 20px;
+  background: #EEEEEE;
 }
 
 .padding-left{
   padding-left:50px;
+  background: #EEEEEE;
 }
 
 .navbar-inverse {
@@ -28,9 +31,11 @@ body {
 .navbar-inverse .navbar-nav li a:hover {
 	background: white;
 }
-
+.background-color{
+  background: #EEEEEE;
+}
 .jumbotron {
-	background-color: #E9E9E9;
+	background: #EEEEEE;
 	color: white;
 	text-align: center;
   margin-bottom: 10px;
@@ -52,6 +57,7 @@ img.resize{
 
 .image {
    position: relative;
+   background: #EEEEEE;
    width: 100%; /* for IE 6 */
 }
 
